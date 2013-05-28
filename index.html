@@ -13,8 +13,8 @@
     </style>
     <script type="text/javascript">
     $(function() {
-      $("#gcf-status").text(US.isIE() ? "off" : "on");
-      $("#content").attr('src', decodeURIComponent(window.location.hash));
+      $("#gcf-status").text(UA.isIE() ? "off" : "on");
+      $("#content").src = decodeURIComponent(window.location.hash.slice(1));
     });
     </script>
   </head>
