@@ -3,14 +3,23 @@
     <title>Google Chrome Frame wrapper</title>
     <!-- Prefer Chrome Frame when available for Internet Explorer -->
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/ua.js"></script>
     <style type="text/css">
-    iframe.content {
+    iframe#content {
       width: 100%;
       height: 100%;
     }
     </style>
+    <script type="text/javascript">
+    $(function() {
+      $("#gcf-status").text(US.isIE() ? "off" : "on");
+      $("#content").attr('src', decodeURIComponent(window.location.hash));
+    });
+    </script>
   </head>
   <body>
-    <iframe class="content" src=""/>
+    <p>Google Chrome Frame is currently: <span id="gcf-status"/></p>
+    <iframe id="content" src=""/>
   </body>
 </html>
