@@ -14,7 +14,8 @@
     <script type="text/javascript">
     $(function() {
       $("#gcf-status").text(UA.isIE() ? "off" : "on");
-      $("#content").src = decodeURIComponent(window.location.hash.slice(1));
+      $("#content").get(0).src = 
+        decodeURIComponent(window.location.hash.slice(1));
     });
     </script>
   </head>
